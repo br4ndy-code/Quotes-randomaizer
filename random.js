@@ -1,39 +1,44 @@
-function random(num, category){
-  let success = ["Success is a journey, not a destination.",
+// Storage
+let success = ["Success is a journey, not a destination.",
   "Success is where preparation and opportunity meet.",
   "Success is how high you bounce when you hit bottom.",
   "Success is the progressive realization of predetermined, worthwhile, personal goals.",
   "When it comes to success, there are no shortcuts."]
 
-  let motivation = ["Success is a journey, not a destination.",
+let motivation = ["Success is a journey, not a destination.",
   "Success is where preparation and opportunity meet.",
   "Success is how high you bounce when you hit bottom.",
   "Success is the progressive realization of predetermined, worthwhile, personal goals.",
   "When it comes to success, there are no shortcuts."]
+
+// Print the quotes
+function p_quotes(num, category){
+    let i = 0
+    while (i < num){
+      let r = Math.floor(Math.random() * num);
+      console.log(category[r])
+      i++
+    }
+  }
+
+function random(num, category){
   
   if (success.length < num && motivation.length < num){
     return "We don't have so big amount of quotes, try again."
   }
   else{
-    if (category == 'motivation'){
-      categor('motivation');
+
+    if (category == 'motivation' || category == 'Motivation'){
+      p_quotes(num, motivation);
     }
-    else if (category == 'success'){
-      categor('success');
+    else if (category == 'success' || category == 'Success'){
+      p_quotes(num, success);
     }
     else{
-      console.log('Wrong category');
+      console.log("Wrong option")
     }
 
   }
-  function categor(item){
-    let i = 0
-    while (i < num){
-      let r = Math.floor(Math.random() * num);
-      console.log(item[r])
-      i++
-    }
-  }
 }
-random(5,'motivation');
-// export default random
+
+export default random
