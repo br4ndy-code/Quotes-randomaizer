@@ -31,7 +31,7 @@ bot.on('callback_query', (query) => {
   }
 
   if (true) {
-    bot.sendMessage(chatId, 'app', {
+    bot.sendMessage(chatId, category, {
       reply_markup: {
           inline_keyboard: keyboard
       }
