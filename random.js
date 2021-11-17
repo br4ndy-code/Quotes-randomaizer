@@ -28,12 +28,12 @@ function random(num, category){
   }
   function categor(item){
     let i = 0
-        while (i < num){
-          r = Math.floor(Math.random() * num);
-          console.log(category[r])
-          i++
-        }
+    while (i < num){
+      let r = Math.floor(Math.random() * num);
+      console.log(item[r])
+      i++
+    }
   }
 }
-random(5,'success');
+random(5,'motivation');
 // export default random
