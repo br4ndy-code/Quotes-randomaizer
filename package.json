@@ -1,0 +1,12 @@
+{
+	"name": "quotes-random",
+	"version": "0.0.1",
+	"author": "br4ndy-code and valek-web",
+	"scripts": {
+		"start": "node index.js"
+	},
+	"dependencies": {
+		"express": "^4.17.1"
+	},
+    "type": "module"
+}

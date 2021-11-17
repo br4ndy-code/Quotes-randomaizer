@@ -1,4 +1,4 @@
-import quotesMap from './main.js'
+import quotesMap from './random.js'
 
 let numberQuotes = Math.ceil(Math.random() * 10)
 
