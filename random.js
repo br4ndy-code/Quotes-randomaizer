@@ -21,7 +21,7 @@ function p_quotes(num, category) {
   while (i < num) {
     let r = Math.floor(Math.random() * num);
     i++;
-    return category[r];
+    console.log( category[r]);
   }
 }
 
