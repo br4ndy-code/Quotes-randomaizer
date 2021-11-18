@@ -40,5 +40,5 @@ function random(num, category){
 
   }
 }
-
-export default random
+random(5,'success');
+// export default random
