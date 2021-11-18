@@ -29,6 +29,12 @@ bot.on("message", (msg) => {
   }
 });
 
+const sendQuotes = (chatId) => {
+  quotesMap(numberQuotes, category).map((quote) => {
+    bot.sendMessage(chatId, quote);
+  });
+};
+
 bot.on("callback_query", (query) => {
   const chatId = query.message.chat.id;
 
@@ -40,7 +46,7 @@ bot.on("callback_query", (query) => {
     category = "success";
   }
 
-  bot.sendMessage(chatId, `${quotesMap(numberQuotes, category)}`);
+  sendQuotes(chatId);
   bot.sendMessage(
     chatId,
     "Write me the required number of quotes and I will send them instantly)"

@@ -20,7 +20,7 @@ function p_quotes(num, category) {
   let i = 0;
   while (i < num) {
     let r = Math.floor(Math.random() * num);
-    result += category[r];
+    result.push(category[r]);
     i++;
   }
   return result;
