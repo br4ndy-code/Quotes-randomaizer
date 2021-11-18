@@ -14,15 +14,16 @@ let motivation = [
   "Success is the progressive realization of predetermined, worthwhile, personal goals.",
   "When it comes to success, there are no shortcuts.",
 ];
-
+let result = []
 // Print the quotes
 function p_quotes(num, category) {
   let i = 0;
   while (i < num) {
     let r = Math.floor(Math.random() * num);
     i++;
-    console.log( category[r]);
+    result += category[r];
   }
+  return result;
 }
 
 function random(num, category) {
@@ -39,6 +40,6 @@ function random(num, category) {
   }
 }
 
-console.log(random(5, "motivation"));
+console.log(random(2, "motivation"));
 
 export default random;
