@@ -20,8 +20,8 @@ function p_quotes(num, category) {
   let i = 0;
   while (i < num) {
     let r = Math.floor(Math.random() * num);
-    i++;
     result += category[r];
+    i++;
   }
   return result;
 }
@@ -40,6 +40,6 @@ function random(num, category) {
   }
 }
 
-console.log(random(2, "motivation"));
+console.log(random(5, "success"));
 
 export default random;
