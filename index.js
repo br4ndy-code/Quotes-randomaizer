@@ -12,10 +12,10 @@ let category = "";
 bot.on("message", (msg) => {
   const chatId = msg.chat.id;
 
-  if (Number(msg.text) > 10) {
-    bot.sendMessage(chatId, "Maximum number of citations 10! :)");
-  } else if (Number(msg.text) <= 10) {
-    numberQuotes = msg.text;
+  if (Number(msg.text) > 5) {
+    bot.sendMessage(chatId, "Maximum number of citations 5! :)");
+  } else if (Number(msg.text) <= 5) {
+    numberQuotes = Number(msg.text);
     bot.sendMessage(chatId, "What quotes do you need?", {
       reply_markup: {
         inline_keyboard: keyboard,
@@ -40,11 +40,9 @@ bot.on("callback_query", (query) => {
     category = "success";
   }
 
-  if (true) {
-    bot.sendMessage(chatId, `${quotesMap(numberQuotes, category)}`, {
-      reply_markup: {
-        inline_keyboard: keyboard,
-      },
-    });
-  }
+  bot.sendMessage(chatId, `${quotesMap(numberQuotes, category)}`);
+  bot.sendMessage(
+    chatId,
+    "Write me the required number of quotes and I will send them instantly)"
+  );
 });
