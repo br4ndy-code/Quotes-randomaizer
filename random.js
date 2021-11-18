@@ -31,8 +31,10 @@ function random(num, category) {
     return "We don't have so big amount of quotes, try again.";
   } else {
     if (category == "motivation") {
+      result = [];
       return p_quotes(num, motivation);
     } else if (category == "success") {
+      result = [];
       return p_quotes(num, success);
     } else {
       return "Wrong option";
@@ -40,6 +42,10 @@ function random(num, category) {
   }
 }
 
-console.log(random(5, "success"));
+////console.log(random(3, "success"));
+
+console.log(random(2, "success"));
+console.log("");
+console.log(random(3, "success"));
 
 export default random;
