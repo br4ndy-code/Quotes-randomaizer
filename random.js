@@ -8,13 +8,13 @@ let success = [
 ];
 
 let motivation = [
-  "Success is a journey, not a destination.",
-  "Success is where preparation and opportunity meet.",
-  "Success is how high you bounce when you hit bottom.",
-  "Success is the progressive realization of predetermined, worthwhile, personal goals.",
-  "When it comes to success, there are no shortcuts.",
+  "Don't stop until you're proud.",
+  "Don't wish for it. Work for it.",
+  "If you work it will work.",
+  "You are your only limit.",
+  "Remember why you started.",
 ];
-let result = [];
+
 // Print the quotes
 function p_quotes(num, category) {
   let i = 0;
