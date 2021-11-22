@@ -1,6 +1,6 @@
 import quotesMap from "./random.js";
 import TelegramBot from "node-telegram-bot-api";
-import { keyboard } from "./keyboard.js";
+import { keyboardCategory, keyboardNumber } from "./keyboard.js";
 
 const token = "2119812922:AAGyAVoGEzPnnWIMdZ4zLuBAHUatcPPPNqs";
 
@@ -11,44 +11,58 @@ let category = "";
 
 bot.on("message", (msg) => {
   const chatId = msg.chat.id;
-
-  if (Number(msg.text) > 5) {
-    bot.sendMessage(chatId, "Maximum number of citations 5! :)");
-  } else if (Number(msg.text) <= 5) {
-    numberQuotes = Number(msg.text);
-    bot.sendMessage(chatId, "What quotes do you need?", {
+  bot.sendMessage(
+    chatId,
+    "Hello! Write me the required number of quotes and I will send them instantly)",
+    {
       reply_markup: {
-        inline_keyboard: keyboard,
+        inline_keyboard: keyboardNumber,
       },
-    });
-  } else {
-    bot.sendMessage(
-      chatId,
-      "Hello! Write me the required number of quotes and I will send them instantly)"
-    );
-  }
+    }
+  );
 });
 
 const sendQuotes = (chatId) => {
   quotesMap(numberQuotes, category).map((quote) => {
     bot.sendMessage(chatId, quote);
   });
+  bot.sendMessage(
+    chatId,
+    "Write me the required number of quotes and I will send them instantly)",
+    {
+      reply_markup: {
+        inline_keyboard: keyboardNumber,
+      },
+    }
+  );
 };
 
 bot.on("callback_query", (query) => {
   const chatId = query.message.chat.id;
-
-  if (query.data === "moreMotivation") {
-    category = "motivation";
+  console.log(query.data);
+  switch (query.data) {
+    case "one": {
+      numberQuotes = 1;
+    }
+    case "two": {
+      numberQuotes = 2;
+    }
+    case "three": {
+      numberQuotes = 3;
+    }
+    case "four": {
+      numberQuotes = 4;
+    }
+    case "five": {
+      numberQuotes = 5;
+    }
+    case "moreMotivation": {
+      category = "motivation";
+    }
+    case "moreSuccess": {
+      category = "motivation";
+    }
   }
 
-  if (query.data === "moreSuccess") {
-    category = "success";
-  }
-
-  sendQuotes(chatId);
-  bot.sendMessage(
-    chatId,
-    "Write me the required number of quotes and I will send them instantly)"
-  );
+  // sendQuotes(chatId);
 });
