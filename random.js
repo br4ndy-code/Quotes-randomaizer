@@ -31,10 +31,10 @@ function random(num, category) {
     return "We don't have so big amount of quotes, try again.";
   } else {
     if (category == "motivation") {
-      result = [];
+      let result = [];
       return p_quotes(num, motivation);
     } else if (category == "success") {
-      result = [];
+      let result = [];
       return p_quotes(num, success);
     } else {
       return "Wrong option";
